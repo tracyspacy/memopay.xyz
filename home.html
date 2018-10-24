@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon"
+      type="image/png"
+      href="favicon.png">
 <meta charset="utf-8">
 <title>Memopay: run your ad campaign on the Bitcoin Cash blockchain</title>
-<meta name="description" content="delivering your message along with 1000 satoshis directly to wallets">
+<meta name="description" content="Way to directly communicate with Bitcoin Cash holders. Deliver your ad message with active hyperlink to bitcoiners wallets and block explorers.">
 <meta name="keywords" content="bch, bitcoin, bitcoin cash, wallet, cryptocurrency, memo, memopay, pay, payment, ad, satoshi, campaign, crypto, advertisement, blockchain">
 <meta name="author" content="tracyspacy">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=0">
+<meta property="og:url" content="http://www.memopay.xyz">
+<meta property="og:type"   content="website">
+<meta property="og:title" content="memopay">
+<meta property="og:description" content="The Bitcoin ad Company. Deliver advertisement directly to Bitcoin Cash holders">
+<meta property="og:image" content="https://i.imgur.com/t52Lnvj.png">
 <link rel="stylesheet" type="text/css" href="style.css" media="all">
 </head>
 <body>
@@ -20,7 +28,7 @@
 <div class="row">
   <div class="column" style="background-color:#white;">
     <h4>Why <i>memopay</i> ad campaign?</h4>
-    <p>- directly contact bitcoin holders
+    <p>- directly contact BCH holders
     <br>
     <br>
     - easily track each contact via transactions
@@ -35,33 +43,93 @@
     - see your message in search results
     <br>
     <br>
-    - pay cents - from 5000 satoshis (∼0.022$) per contact</p>
+    - pay cents - from <b>5000 satoshis (∼0.023$) per contact</b></p>
   </div>
   <div class="column" style="background-color:#white;">
     <h4>How to run?</h4>
-    <p>- prepare your sharp message - we recommend 35 symbols
+    <p>- prepare your sharp message - we recommend 80 symbols (max. 200 symbols)
     <br>
     <br>
     - choose the date for the campaign
     <br>
     <br>
-    - decide how many unique addresses to reach - from 1K to 100K
+    - decide how many unique addresses to reach - from 10K to 100K
     <br>
     <br>
-    - set the amount you want to send to each address - min. 1000 satoshis (∼0.004$)
+    - set the amount you want to send to each address - min. 1000 satoshis (∼0.0045$)
     <br>
     <br>
-    - calculate your final costs: min. price per address 5000 satoshis x unique addresses
+    - calculate your final costs: min. price per address 5000 satoshis x amount of unique addresses
     <br>
     <br>
-    - send this info to <a style="color: #fff" href="mailto:memopay@protonmail.com">
-      <u>memopay@protonmail.com</u></a></p>
+    - fill the form below with this info 🠳 </p>
   </div>
 </div>
 <br>
 <br>
+<button style="font-family: Menlo" class="open-button" onclick="openForm()"><i><b>RUN A CAMPAIGN</b></i></button>
+  <div class="form-popup" id="myForm">
+    <form id="runacampaign" action="submitform.php" method="post" class="form-container">
+
+      <label for="company"><b>Company</b></label>
+      <input type="text" placeholder="Company" name="company" required>
+
+      <label for="contactperson"><b>Contact person</b></label>
+      <input type="text" placeholder="Contact Person" name="contactperson" required>
+
+      <label for="email"><b>E-mail</b></label>
+      <input type="email" placeholder="E-mail" name="email" required>
+
+      <label for="admessage"><b>Ad message</b></label>
+      <textarea rows="2" cols="40" maxlength="200" name="admessage" placeholder="Ad message (max. 200 symbols)..." required></textarea>
+
+      <label for="date"><b>Date of the campaign</b></label>
+      <input type="date" placeholder="Date of my campaign" name="date" required>
+
+      <label for="amount"><b>Amount of BCH addresses to reach</b></label>
+      <input type="number" id="amount" placeholder="Amount of BCH addresses to reach" name="amount" value= "10000" step="10000" min="10000" max="100000" required>
+
+      <button type="submit" class="btn"><b>Submit</b></button>
+      <button type="button" class="btn cancel" onclick="closeForm()"><b>Close</b></button>
+    </form>
+  </div>
+
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+(function () {
+	function calculaterunacampaign(amount) {
+		amount = parseFloat(amount);
+		return ((amount * 5000)/100000000);
+	}
+
+	var runacampaign = document.getElementById("runacampaign");
+	if (runacampaign) {
+		runacampaign.onsubmit = function () {
+			this.costs.value = calculaterunacampaign(this.amount.value);
+			return false;
+		};
+	}
+}());
+</script>
+
+<br>
+<br>
 <h3>How it looks like?</h3>
-<p style="font-size:1.9vw;">Thousands of unique Bitcoin Cash addresses receive min. 1000 satoshis with your message[<a style="color: #fff" href="https://bch.btc.com/cdab97bac063c8359ad41d4da4f3b324f98e878302332909056596f7f59ed529" target= "_blank"><u>see transaction's example</u></a>]</p>
+<p style="font-size:1.9vw;">Thousands of unique Bitcoin Cash addresses receive min. 1000 satoshis with your message[<a style="color: #fff" href="https://blockchair.com/bitcoin-cash/transaction/3568bfedbeea3863df1b8b9f680fd6da06779188b8696d2332cee864c7d2b699" target= "_blank"><u>see transaction's example</u></a>]</p>
+<br>
+<div class="navbar">
+  <a href="technical_details"><u>Technical Info</u></a>
+  <a href="https://medium.com/@memopay" target= "_blank"><u>Blog</u></a>
+  <a href="opt_out"><u>Opt-out</u></a>
+  <a href="https://i.imgur.com/t52Lnvj.png" target= "_blank"><u>Logo</u></a>
+</div>
 <h1 align="right"><i>memopay</i><sub><span class="smaller">the Bitcoin ad company</span></sub></h1>
 </div>
 </body>

@@ -1,1 +1,0 @@
-# memopay.xyz

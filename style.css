@@ -62,6 +62,7 @@ header {
 .content_wrapper {
     width: 1000px;
     margin: auto;
+
 }
 
 .content_wrapper h1 {
@@ -107,4 +108,171 @@ header {
     content: "";
     display: table;
     clear: both;
+}
+
+.navigation_menu {
+    text-align: center;
+    display: block;
+    color: black;
+}
+
+.width-10 {
+    width: 10%;
+}
+
+.width-25 {
+    width: 12%;
+    margin: auto;
+    float: left;
+    vertical-align: middle;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-75 {
+    width: 87%;
+    margin: auto;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+button.open-button {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  color: #32991E;
+  padding: 14px 28px;
+  font-size: 2.2vw;
+  cursor: pointer;
+  text-align: center;
+}
+button.open-button:hover {
+    background-color: #F59332;
+    color: #fff;
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  color: #32991E;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 28px;
+  background-color: white;
+  color: #32991E;
+  font-family: menlo;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=email], .form-container input[type=date], .form-container input[type=number], .form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  font-family: menlo;
+  font-size: 1.3vw;
+  color: #000;
+  resize: none;
+}
+
+/* Full-width input fields */
+.form-container input[type=submit] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  opacity: 0.8;
+  font-family: menlo;
+  font-size: 1vw;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Add some hover effects to input type submit */
+.form-container input[type=submit]:hover {
+  opacity: 1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=email]:focus, .form-container input[type=date]:focus, .form-container input[type=number]:focus, .form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+  color: #000;
+  font-family: menlo;
+  font-size: 1vw;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #32991E;
+  color: #fff;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  font-family: menlo;
+  font-size: 1.2vw;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #F59332;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+* {box-sizing: border-box}
+body {font-family: menlo !important;}
+
+.navbar {
+  width: 100%;
+  background-color: #32991E;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3vw;
+  width: 25%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #32991E;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+
+  }
 }
